@@ -278,7 +278,7 @@ function Files() {
         </TableCell>
       </tr>
     </TableHeader>
-    <TableBody className="divide-y divide-gray-100 dark:divide-gray-700 h-[50vh]">
+    <TableBody className="divide-y divide-gray-100 dark:divide-gray-700 h-[5vh]">
       {filteredFiles.map((file, i) => (
         <TableRow
           key={i}
