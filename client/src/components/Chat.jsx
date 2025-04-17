@@ -588,6 +588,7 @@ function Chat() {
       </div>
     </div>
   );
+
 }
 
 

@@ -15,17 +15,6 @@ const router = express.Router();
 router.use(validateUser);
 const upload = multer({ dest: 'uploads/' });
 
-router.post('/testUpload', upload.single('file'), async (req, res) => {
-    console.log("Start uploading");
-
-    try {
-        console.log("ok fine");
-        res.send("djwdw");
-    } catch (error) {
-        console.log(`error: ${error}`);
-        res.status(500).json({ message: "Error uploading file" });
-    }
-});
 
 router.post('/upload', upload.single("file"), userExists, folderExists, userFolderAuth, async (req, res) => {
     // suppose file is uploaded and a url is generated
@@ -204,7 +193,7 @@ router.post('/stream_query', userExists, async (req, res) => {
     }
 });
 
-// Add new route for speech-to-text conversion
+// speech-to-text conversion
 router.post('/stt', userExists, upload.single('audio'), async (req, res) => {
     try {
         if (!req.file) {

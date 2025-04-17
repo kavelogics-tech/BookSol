@@ -15,7 +15,7 @@ from pydantic import BaseModel
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 
-# Load environment variables
+# Load new environment variables
 load_dotenv()
 
 app = FastAPI(title="BookSol PDF Q&A", version="8.0")
